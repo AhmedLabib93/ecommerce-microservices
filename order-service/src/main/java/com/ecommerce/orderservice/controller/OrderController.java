@@ -44,8 +44,8 @@ public class OrderController {
     public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
         ResponseEntity<OrderResponse> response = new ResponseEntity<OrderResponse>(
                 orderService.saveOrder(orderRequest), HttpStatus.CREATED);
-        if (response.hasBody())
-            orderProducer.sendMessage(response.getBody());
+       // if (response.hasBody())
+       //     orderProducer.sendMessage(response.getBody());
         return response;
     }
 
